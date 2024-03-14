@@ -7,6 +7,14 @@ I have added Subscription Count for all channel types and now WebHook will tell 
 Node is now upgraded to latest and in future releases we will stop using PM2 (actually in my builds i dont even now, but some user prefer it so its present.)
 
 More changes will be coming soon. 
+## Ready Made Docker Image 
+
+For saving your time, i have compiled and created a Docker image which is available at (https://hub.docker.com/r/ehsanr91/soketi-reborn)
+
+You can use `docker pull ehsanr91/soketi-reborn` to pull the image.
+
+## Docker Compose Example with Custom config.
+
 
 ## Soketi can be now deployed on Cloudflare's infrastructure. 📣 
 
