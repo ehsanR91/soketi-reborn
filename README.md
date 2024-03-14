@@ -14,7 +14,32 @@ For saving your time, i have compiled and created a Docker image which is availa
 You can use `docker pull ehsanr91/soketi-reborn` to pull the image.
 
 ## Docker Compose Example with Custom config.
+`
+soketi:
+    image: soketi-reborn:distrolessv4
+    ports:
+      - 6001:6001
+      - 9601:9601
+    environment:
+      - SOKETI_DEBUG='-1'
+      - DEFAULT_APP_ID='YOUR_APP_ID'
+      - DEFAULT_APP_KEY='YOUR_APP_KEY'
+      - DEFAULT_APP_SECRET='YOUR_APP_SECRET'
+      - PUSHER_HOST='127.0.0.1'
+      - PUSHER_PORT= '6001'
+      - PUSHER_SCHEME='http'
+      - METRICS_SERVER_PORT=9601
+      - DEFAULT_APP_ENABLE_CLIENT_MESSAGES=false
+      - METRICS_ENABLED= 1
+      - SOKETI_CACHE_DRIVER=memory
+      - HOME=/app/
+    volumes:
+      - ./config.json:/app/config.json
+    command: ["/app/bin/server.js", "start", "--config=/app/config.json"]
+    restart: unless-stopped
+`
 
+Alternatively you can modify the config.json file which actually loads the configuration, and Soketi will work with those configurations.
 
 ## Soketi can be now deployed on Cloudflare's infrastructure. 📣 
 

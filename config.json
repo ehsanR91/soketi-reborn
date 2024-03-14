@@ -14,8 +14,8 @@
                     "url": "http://localhost:8080/webhooks/events/",
                     "event_types": ["channel_occupied","channel_vacated","subscription_count", "client_event","member_added","member_removed"],
                     "filter": {
-        "channel_name_starts_with": "od-",
-        "channel_name_ends_with": "-sp"
+        "channel_name_starts_with": "",
+        "channel_name_ends_with": ""
     }
                 }
             ]
